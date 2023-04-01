@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-item {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.35s ease-out;
+}
+
+.nav-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.search-icon{
+  position: relative;
+  width: max-content;
+  height: max-content;
+}
+.search-icon::before{
+  content: url("/assets/svg/search.svg");
+  position: absolute;
+  height: 100%;
+  transform: translateY(25%);
+  left: 10px;
+}
