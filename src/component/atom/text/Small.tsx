@@ -5,12 +5,11 @@ import * as React from 'react';
 
 import { cn } from '@/utils/merge';
 
-export const HeadingVariants = cva('max-w-prose text-white', {
+export const ParagraphVariants = cva('max-w-prose text-white', {
   variants: {
     size: {
-      small: 'text-3xl lg:text-4xl',
-      default: 'text-4xl lg:text-5xl',
-      medium: 'text-5xl lg:text-6xl',
+      small: 'text-xs lg:sm',
+      default: 'text-sm lg:text-base',
     },
   },
   defaultVariants: {
@@ -20,22 +19,22 @@ export const HeadingVariants = cva('max-w-prose text-white', {
 
 interface ParagraphProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof HeadingVariants> {}
+    VariantProps<typeof ParagraphVariants> {}
 
-const HeadingOne = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
+const Small = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ className, size, children, ...props }, ref) => {
     return (
-      <h1
+      <p
         ref={ref}
         {...props}
-        className={cn(HeadingVariants({ size, className }))}
+        className={cn(ParagraphVariants({ size, className }))}
       >
         {children}
-      </h1>
+      </p>
     );
   }
 );
 
-HeadingOne.displayName = 'HeadingOne';
+Small.displayName = 'Small';
 
-export default HeadingOne;
+export default Small;

@@ -25,15 +25,22 @@
   transform-origin: bottom left;
 }
 
-.search-icon{
+.search-icon {
   position: relative;
   width: max-content;
   height: max-content;
 }
-.search-icon::before{
-  content: url("/assets/svg/search.svg");
+.search-icon::before {
+  content: url('/assets/svg/search.svg');
   position: absolute;
   height: 100%;
   transform: translateY(25%);
   left: 10px;
+}
+.elipsis-t {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }

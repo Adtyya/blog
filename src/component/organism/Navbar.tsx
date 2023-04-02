@@ -32,7 +32,7 @@ export default function Navbar() {
         ref={canvasRef}
         className={`${
           canvas ? 'translate-x-0' : '-translate-x-full'
-        } fixed top-0 h-screen w-4/6 bg-gradient-to-b from-slate-700 to-slate-900 duration-300 lg:hidden`}
+        } fixed top-0 z-[9999999] h-screen w-4/6 bg-gradient-to-b from-slate-700 to-slate-900 duration-300 lg:hidden`}
       >
         <div className="flex h-full w-full flex-col items-center justify-start space-y-2 px-2 pt-12">
           <div className="flex h-max w-full items-center rounded-full bg-slate-600/60 py-2">
@@ -83,12 +83,14 @@ export default function Navbar() {
         </div>
         <div className="flex items-center">
           <div className="mr-14 flex items-center justify-center space-x-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-md bg-[#4B5563] shadow-md">
-              <HeadingOne className={SourceSans.className}>A</HeadingOne>
+            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#4B5563] shadow-md md:h-12 md:w-12">
+              <HeadingOne size="small" className={SourceSans.className}>
+                A
+              </HeadingOne>
             </div>
             <Paragraph>Aditya</Paragraph>
           </div>
-          <div className="ml-8 hidden items-center space-x-8 lg:flex">
+          <div className="ml-5 hidden items-center space-x-8 lg:flex">
             <Link href="#" className="nav-item py-1">
               <Paragraph size="small">Random</Paragraph>
             </Link>
@@ -100,6 +102,9 @@ export default function Navbar() {
             </Link>
             <Link href="#" className="nav-item py-1">
               <Paragraph size="small">UI design</Paragraph>
+            </Link>
+            <Link href="#" className="nav-item py-1">
+              <Paragraph size="small">About</Paragraph>
             </Link>
           </div>
         </div>
