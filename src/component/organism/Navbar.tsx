@@ -3,6 +3,7 @@ import { Source_Sans_Pro } from 'next/font/google';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
+import IconCloseOutline from '../atom/CloseIcon';
 import { HeadingOne, Paragraph } from '../atom/text';
 
 const SourceSans = Source_Sans_Pro({
@@ -66,6 +67,15 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      <div
+        className={`fixed right-0 block ${
+          canvas ? 'translate-x-0' : 'translate-x-full'
+        } top-0 duration-300 lg:hidden`}
+      >
+        <button className="h-20 pr-4">
+          <IconCloseOutline className="rounded-lg bg-slate-600 text-white/60"></IconCloseOutline>
+        </button>
+      </div>
       <div className="flex w-full items-center justify-between px-5 lg:px-0">
         <div
           className="block space-y-1 lg:hidden"
@@ -82,14 +92,17 @@ export default function Navbar() {
           </svg>
         </div>
         <div className="flex items-center">
-          <div className="mr-14 flex items-center justify-center space-x-4">
+          <Link
+            href="/"
+            className="mr-14 flex items-center justify-center space-x-4"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#4B5563] shadow-md md:h-12 md:w-12">
               <HeadingOne size="small" className={SourceSans.className}>
                 A
               </HeadingOne>
             </div>
             <Paragraph>Aditya</Paragraph>
-          </div>
+          </Link>
           <div className="ml-5 hidden items-center space-x-8 lg:flex">
             <Link href="#" className="nav-item py-1">
               <Paragraph size="small">Random</Paragraph>

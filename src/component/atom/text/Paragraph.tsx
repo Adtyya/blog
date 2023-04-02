@@ -5,7 +5,7 @@ import * as React from 'react';
 
 import { cn } from '@/utils/merge';
 
-export const ParagraphVariants = cva('max-w-prose text-white', {
+export const ParagraphVariants = cva('max-w-max text-white', {
   variants: {
     size: {
       small: 'text-lg lg:text-xl',

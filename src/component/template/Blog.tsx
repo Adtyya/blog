@@ -1,4 +1,4 @@
-import BlogCard from '../molecul/BlogCard';
+import BlogCard from '../organism/BlogCard';
 
 export default function Blog({ data }: { data: string[] }) {
   return (

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import React from 'react';
 
 import { Paragraph, Small } from '../atom/text';
+import Author from '../molecul/Author';
+import Breadcrumb from '../molecul/BreadCrumb';
 
 export default function BlogCard({ index }: { index?: number }) {
   if (index === 0) {
@@ -18,12 +20,12 @@ export default function BlogCard({ index }: { index?: number }) {
           />
         </div>
         <div className="col-span-full w-full space-y-3 px-3 lg:col-span-4">
-          <div className="flex items-center space-x-3">
-            <Small className="text-white/60">UI Design</Small>
-            <div className="h-1 w-1 rounded-full bg-white/60"></div>
-            <Small className="text-white/60">July 2, 2021</Small>
-          </div>
-          <Link href="#">
+          <Breadcrumb>
+            <Breadcrumb.Category>UI Design</Breadcrumb.Category>
+            <Breadcrumb.Seperator></Breadcrumb.Seperator>
+            <Breadcrumb.Date>July 2, 2021</Breadcrumb.Date>
+          </Breadcrumb>
+          <Link href="/blog/read/teh-pucuk-harum">
             <Paragraph size="default">
               Understanding color theory: the color wheel and finding
               complementary colors
@@ -37,29 +39,27 @@ export default function BlogCard({ index }: { index?: number }) {
             blanditiis? Vero, harum unde! Nihil labore sit doloribus ipsa.
             Veniam, at temporibus!
           </Small>
-          <div className="flex items-center space-x-5">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full">
+          <Author>
+            <Author.Image>
               <Image
                 src="/assets/images/person.jpg"
                 fill
                 style={{ objectFit: 'cover' }}
                 alt="person"
               />
-            </div>
-            <div>
-              <Small>Jajang Kamaludin</Small>
-              <Small size="small" className="text-white/60">
-                UI Designer
-              </Small>
-            </div>
-          </div>
+            </Author.Image>
+            <Author.Biodata>
+              <Author.Name>Jajang Kamaludin</Author.Name>
+              <Author.Profesion> UI Designer</Author.Profesion>
+            </Author.Biodata>
+          </Author>
         </div>
       </div>
     );
   }
   return (
     <div className="grid grid-cols-1 space-y-3">
-      <div className="relative col-span-full h-64 w-full overflow-hidden rounded-lg lg:col-span-8 lg:h-72">
+      <div className="relative col-span-full h-64 w-full overflow-hidden rounded-lg lg:h-72">
         <Image
           src="/assets/images/laptop.jpg"
           fill
@@ -68,13 +68,13 @@ export default function BlogCard({ index }: { index?: number }) {
           className="duration-300 hover:scale-105"
         />
       </div>
-      <div className="col-span-full w-full space-y-3 lg:col-span-4">
-        <div className="flex items-center space-x-3">
-          <Small className="text-white/60">UI Design</Small>
-          <div className="h-1 w-1 rounded-full bg-white/60"></div>
-          <Small className="text-white/60">July 2, 2021</Small>
-        </div>
-        <Link href="#">
+      <div className="col-span-full w-full space-y-3 px-3">
+        <Breadcrumb>
+          <Breadcrumb.Category>UI Design</Breadcrumb.Category>
+          <Breadcrumb.Seperator></Breadcrumb.Seperator>
+          <Breadcrumb.Date>July 2, 2021</Breadcrumb.Date>
+        </Breadcrumb>
+        <Link href="/blog/read/teh-pucuk-harum">
           <Paragraph size="default">
             Understanding color theory: the color wheel and finding
             complementary colors
@@ -87,22 +87,20 @@ export default function BlogCard({ index }: { index?: number }) {
           numquam iure. Natus facere quia nesciunt quae a id blanditiis? Vero,
           harum unde! Nihil labore sit doloribus ipsa. Veniam, at temporibus!
         </Small>
-        <div className="flex items-center space-x-5">
-          <div className="relative h-12 w-12 overflow-hidden rounded-full">
+        <Author>
+          <Author.Image>
             <Image
               src="/assets/images/person.jpg"
               fill
               style={{ objectFit: 'cover' }}
               alt="person"
             />
-          </div>
-          <div>
-            <Small>Jajang Kamaludin</Small>
-            <Small size="small" className="text-white/60">
-              UI Designer
-            </Small>
-          </div>
-        </div>
+          </Author.Image>
+          <Author.Biodata>
+            <Author.Name>Jajang Kamaludin</Author.Name>
+            <Author.Profesion> UI Designer</Author.Profesion>
+          </Author.Biodata>
+        </Author>
       </div>
     </div>
   );
