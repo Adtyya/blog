@@ -70,7 +70,7 @@ export default function Navbar() {
       <div
         className={`fixed right-0 block ${
           canvas ? 'translate-x-0' : 'translate-x-full'
-        } top-0 duration-300 lg:hidden`}
+        } top-0 duration-300 lg:hidden z-[9999999]`}
       >
         <button className="h-20 pr-4">
           <IconCloseOutline className="rounded-lg bg-slate-600 text-white/60"></IconCloseOutline>
